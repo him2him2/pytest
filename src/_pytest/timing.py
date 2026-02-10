@@ -32,12 +32,13 @@ class Instant:
 
     # Creation time of this instant, using time.time(), to measure actual time.
     # Note: using a `lambda` to correctly get the mocked time via `MockTiming`.
-    time: float = dataclasses.field(default_factory=lambda: time(), init=False)  # noqa: PLW0108 
+    time: float = dataclasses.field(default_factory=lambda: time(), init=False)  # noqa: PLW0108
 
     # Performance counter tick of the instant, used to measure precise elapsed time.
     # Note: using a `lambda` to correctly get the mocked time via `MockTiming`.
     perf_count: float = dataclasses.field(
-        default_factory=lambda: perf_counter(), init=False  # noqa: PLW0108 
+        default_factory=lambda: perf_counter(),
+        init=False,  # noqa: PLW0108
     )
 
     def elapsed(self) -> Duration:
