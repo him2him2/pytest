@@ -38,7 +38,7 @@ class Instant:
     # Note: using a `lambda` to correctly get the mocked time via `MockTiming`.
     perf_count: float = dataclasses.field(
         default_factory=lambda: perf_counter(),
-        init=False,  # noqa: PLW0108
+        init=False,
     )
 
     def elapsed(self) -> Duration:
